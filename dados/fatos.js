@@ -102,4 +102,4 @@ const fatosHistoricos = [
   { "ano": "2020", "fato": "Tem início a pandemia de COVID - 19" },
 ];
 
-exports.fatosHistoricos = fatosHistoricos;
+export default fatosHistoricos;

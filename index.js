@@ -1,15 +1,14 @@
-const express = require('express');
+import express from 'express';
+import { servicoBuscarFatoPorAno, servicoValidarAno } from './servico/servico.js';
+
 const app = express();
-const servico = require('./servico/servico');
-
-
 
 app.get('/', (req, res) => {
   let anoFato = req.query.ano;
 
-  if (servico.servicoValidarAno(anoFato)) {
+  if (servicoValidarAno(anoFato)) {
     
-    let fato = servico.servicoBuscarFatoPorAno(anoFato);
+    let fato = servicoBuscarFatoPorAno(anoFato);
   
     res.json({fato_histotorico: fato});
   } else {

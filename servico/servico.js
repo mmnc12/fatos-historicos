@@ -1,14 +1,11 @@
-const fatoHistorico = require('../dados/fatos')
+import fatosHistoricos from "../dados/fatos.js";
 
 function servicoBuscarFatoPorAno(ano) {
-  return fatoHistorico.fatosHistoricos.filter(fato => fato.ano == ano);
+  return fatosHistoricos.filter(fato => fato.ano == ano);
 }
 
 function servicoValidarAno(ano) {
   return (ano >= 1921 && ano <= 2020) ? true : false;
 }
 
-
-
-exports.servicoBuscarFatoPorAno = servicoBuscarFatoPorAno;
-exports.servicoValidarAno = servicoValidarAno;
+export {servicoBuscarFatoPorAno, servicoValidarAno}
